@@ -1,0 +1,8 @@
+/* 0-best_case.txt */
+O(n^2)
+
+/* 1-average_case.txt */
+O(n^2)
+
+/* 2-worst_case.txt */
+O(n^2)
