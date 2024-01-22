@@ -60,14 +60,15 @@ ssize_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 			}
 		}
 	}
-	if (i + 1 != high)
+
+	if (array[i + 1] != array[high])
 	{
 		swap(&array[i + 1], &array[high]);
 		print_array(array, size);
 	}
+
 	return (i + 1);
 }
-
 
 /**
  * swap - Swaps two integers
