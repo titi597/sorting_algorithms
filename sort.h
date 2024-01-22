@@ -52,6 +52,7 @@ void merge_env(int *merge, int *div, size_t front, size_t aptr, size_t back);
 void merge_recursive(int *merge, int *div, size_t front, size_t back);
 void heap_sort(int *array, size_t size);
 void heapify(int *array, size_t size, size_t i, size_t max);
-
+void radix_sort(int *array, size_t size);
+void countSort(int *array, size_t size, int ex, int *div);
 
 #endif /* SORT_H */
