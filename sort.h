@@ -48,6 +48,7 @@ void swap_node_behind(listint_t **list, listint_t **tail, listint_t **head);
 void counting_sort(int *array, size_t size);
 int get_max(int *array, int size);
 void merge_sort(int *array, size_t size);
-void merge(int *array, int *left, size_t left_size, int *right, size_t right_size);
+void merge_env(int *merge, int *div, size_t front, size_t aptr, size_t back);
+void merge_recursive(int *merge, int *div, size_t front, size_t back);
 
 #endif /* SORT_H */
