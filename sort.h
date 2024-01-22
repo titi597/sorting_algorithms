@@ -47,4 +47,7 @@ void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **head);
 void swap_node_behind(listint_t **list, listint_t **tail, listint_t **head);
 void counting_sort(int *array, size_t size);
 int get_max(int *array, int size);
+void merge_sort(int *array, size_t size);
+void merge(int *array, int *left, size_t left_size, int *right, size_t right_size);
+
 #endif /* SORT_H */
