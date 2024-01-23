@@ -1,6 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
+
+int hoare_partition(int *array, size_t size, int left, int right);
+void hoare_recursive(int *array, size_t size, int left, int right);
+void quick_sort_hoare(int *array, size_t size);
+
 
 /**
  * swap - Swaps two elements in an array.
@@ -11,16 +14,15 @@ void swap(int *a, int *b)
 {
 	int tmp;
 
-	tmp= *a;
+	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
-
 /**
  * hoare_partition - Partitions the array using the Hoare scheme.
  * @array: The array to be partitioned.
- * @low: The starting index of the partition.
- * @high: The ending index of the partition.
+ * @left: The starting index of the partition.
+ * @right: The ending index of the partition.
  * @size: The size of the array.
  * Return: The index of the pivot after partitioning.
  */
@@ -47,26 +49,29 @@ int hoare_partition(int *array, size_t size, int left, int right)
 
 	return (above);
 }
+
 /**
- * quick_sort_hoare_recursive - Recursively sorts a partition of the array.
+ * hoare_recursive - Recursively sorts a partition of the array.
  * @array: The array to be sorted.
- * @low: The starting index of the partition.
- * @high: The ending index of the partition.
+ * @left: The starting index of the partition.
+ * @right: The ending index of the partition.
  * @size: The size of the array.
  */
-void quick_sort_hoare_recursive(int *array, int low, int high, size_t size)
+void hoare_recursive(int *array, size_t size, int left, int right)
 {
 	int ptr;
 
-	if (high - low > 0)
+	if (right - left > 0)
 	{
-		ptr = hoare_partition(array, size, low, high);
-		quick_sort_hoare_recursive(array, size, low, ptr - 1);
-		quick_sort_hoare_recursive(array, size, ptr, high);
+		ptr = hoare_partition(array, size, left, right);
+		hoare_recursive(array, size, left, ptr - 1);
+		hoare_recursive(array, size, ptr, right);
 	}
 }
+
 /**
- * quick_sort_hoare - Sorts an array of integers in ascending order using Quick sort.
+ * quick_sort_hoare - Sorts an array of integers in ascending
+ * order using Quick sort.
  * @array: The array to be sorted.
  * @size: The size of the array.
  */
@@ -75,5 +80,5 @@ void quick_sort_hoare(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	quick_sort_hoare_recursive(array, size, 0, size - 1);
+	hoare_recursive(array, size, 0, size - 1);
 }
