@@ -26,7 +26,7 @@ void swap(int *a, int *b)
 void bitonic_merge(int *array, size_t low, size_t div, size_t dir, char apt)
 {
 	size_t i, upt = dir / 2;
-	
+
 	if (dir > 1)
 	{
 		for (i = div; i < div + upt; i++)
