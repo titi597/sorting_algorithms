@@ -54,5 +54,8 @@ void heap_sort(int *array, size_t size);
 void heapify(int *array, size_t size, size_t i, size_t max);
 void radix_sort(int *array, size_t size);
 void countSort(int *array, size_t size, int ex, int *div);
+void bitonic_merge(int *array, size_t low, size_t div, size_t dir, char apt);
+void bitonic_rec(int *array, size_t size, size_t dir, size_t sq, char div);
+void bitonic_sort(int *array, size_t size);
 
 #endif /* SORT_H */
